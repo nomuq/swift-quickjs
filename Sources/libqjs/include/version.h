@@ -1,0 +1,1 @@
+#define CONFIG_VERSION "2020-07-05"

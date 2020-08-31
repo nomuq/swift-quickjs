@@ -1,6 +1,6 @@
 /*
  * QuickJS Read Eval Print Loop
- * 
+ *
  * Copyright (c) 2017-2020 Fabrice Bellard
  * Copyright (c) 2017-2020 Charlie Gordon
  *
@@ -137,7 +137,7 @@ import * as os from "os";
     var term_read_buf;
     var term_width;
     /* current X position of the cursor in the terminal */
-    var term_cursor_x = 0; 
+    var term_cursor_x = 0;
     
     function termInit() {
         var tab;
@@ -270,7 +270,7 @@ import * as os from "os";
                 } else {
                     l = Math.min(term_width - 1 - term_cursor_x, delta);
                     print_csi(l, "C"); /* right */
-                    delta -= l; 
+                    delta -= l;
                     term_cursor_x += l;
                 }
             }
@@ -398,7 +398,7 @@ import * as os from "os";
 
     function backward_word() {
         cursor_pos = skip_word_backward(cursor_pos);
-    }        
+    }
 
     function accept_line() {
         std.puts("\n");

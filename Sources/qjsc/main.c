@@ -36,6 +36,8 @@
 #include "cutils.h"
 #include "quickjs-libc.h"
 
+#include "version.h"
+
 typedef struct {
     char *name;
     char *short_name;
