@@ -6,40 +6,41 @@ import PackageDescription
 // ./.build/release/qjsc -c -o repl.c -m Sources/qjs/repl.js
 
 let package = Package(
-    name: "qjs",
+    name: "quickjs",
     products: [
+        
         .library(
-            name: "libqjs",
-            targets: ["libqjs"]),
+            name: "quickjs",
+            targets: ["quickjs"]),
         .library(
             name: "jscompress",
             targets: ["jscompress"]),
         .library(
             name: "unicode_gen",
             targets: ["unicode_gen"]),
+
         .executable(name: "qjsc", targets: ["qjsc"]),
         .executable(name: "qjs", targets: ["qjs"])
     ],
     targets: [
         .target(
-            name: "libqjs"
-        ),
-        .target(
-            name: "qjs",
-            dependencies:["libqjs", "qjsc"]
+            name: "quickjs"
         ),
         .target(
             name: "qjsc",
-            dependencies:["libqjs"]
+            dependencies:["quickjs"]
+        ),
+        .target(
+            name: "qjs",
+            dependencies:["quickjs"]
         ),
         .target(
             name: "jscompress",
-            dependencies:["libqjs"]
+            dependencies:["quickjs"]
         ),
-        
         .target(
             name: "unicode_gen",
-            dependencies:["libqjs"]
+            dependencies:["quickjs"]
         )
     ]
 )
